@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item android:title="Principal">
+        <menu >
+        <item
+            android:id="@+id/buttonSave"
+            android:icon="@drawable/ic_help_drawe"
+            android:title="Botão do Panico"
+            android:orderInCategory="400"/>
+        </menu>
+
+    </item>
+
+    <item android:title="@string/related_drawer_description">
+        <menu >
+            <item
+                android:id="@+id/help_item"
+                android:icon="@drawable/ic_help_drawe"
+                android:title="@string/help_title" />
+
+            <item
+                android:id="@+id/places_to_avoid_item"
+                android:icon="@drawable/ic_places_black_drawer"
+                android:title="@string/places_to_avoid_title" />
+            <item
+                android:id="@+id/information_item"
+                android:icon="@drawable/ic_info_black_drawer"
+                android:title="@string/info_title" />
+
+            <item
+                android:id="@+id/how_to_protect_yourself_item"
+                android:icon="@drawable/ic_protect_yourself"
+                android:title="@string/protect_title"
+                />
+
+            <item
+                android:id="@+id/social_media_item"
+                android:icon="@drawable/ic_social_midia_drawer"
+                android:title="@string/social_media_title"
+                />
+        </menu>
+    </item>
+
+    <item android:title="@string/declaration_drawer_description">
+        <menu >
+
+            <item
+                android:id="@+id/about_us_item"
+                android:icon="@drawable/ic_about_us_drawer"
+                android:title="@string/about_us_title" />
+            <item
+                android:id="@+id/inspiration_item"
+                android:icon="@drawable/ic_inspiration"
+                android:title="@string/inspiration_title"
+                />
+
+        </menu>
+    </item>
+    <item
+        android:id="@+id/footer_spacer_2"
+        android:checkable="false"
+        android:enabled="false"
+        android:orderInCategory="200"
+        android:title="" />
+
+</menu>

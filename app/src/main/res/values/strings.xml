@@ -1,0 +1,142 @@
+<resources>
+    <string name="app_name"> ONE FOR ALL </string>
+        
+    <string name="pass_hint"> Senha </string>
+        
+    <string name="email_hint">Email </string>
+        
+    <string name="login_logo_desc"> Página de Login do Logo </string>
+        
+    <string name="login_btn_text"> LOGIN </string>
+        
+    <string name="login_reg_btn_text"> Precisa de uma nova conta? </string>
+        
+    <string name="action_search_text"> Pesquisar </string>
+        
+    <string name="action_setting_text"> Configurações da conta </string>
+        
+    <string name="action_logout_text"> Efetuar logout </string>
+        
+    <string name="reg_btn_text"> Criar nova conta </string>
+        
+    <string name="reg_login_text"> Já tem uma conta? </string>
+        
+    <string name="reg_pass_text"> Senha </string>
+        
+    <string name="reg_confirm_pass_text"> Confirme a senha </string>
+        
+    <string name="setup_name_hint"> Nome </string>
+        
+    <string name="setup_save_btn"> Salvar configurações da conta </string>
+        
+    <string name="setup_name_hint_text"> NOME </string>
+        
+    <string name="setup_btn_name_text"> Salvar Alteraçoes</string>
+        
+    <string name="post_desc_hint"> Adicionar descrição </string>
+        
+    <string name="new_post_btn_hint"> Postar Blog </string>
+       
+    <string name="bottom_home_text"> Home</string>
+        
+    <string name="bottom_notification_text">Notificação </string>
+        
+    <string name="bottom_ac_text"> Conta </string>
+        
+    <string name="hello_blank_fragment"> Olá fragmento em branco </string>
+    <string name="menu_title_new_post">Denunciar</string>
+    <string name="menu_title_friends">Amigos</string>
+    <string name="menu_title_profile">Perfil</string>
+    <string name="menu_title_follower">Seguidores</string>
+    <string name="facebook_app_id">418899268552916</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+    <!--Area MainActivity -->
+
+    <string name="bottom_maps_text">Mapa</string>
+    <string name="bottom_news_text">Noticias</string>
+    <string name="bottom_report_text">Denuncie-Aqui</string>
+    <string name="main_page_title">Main Page</string>
+
+
+    <!--Area SetupActivity -->
+
+    <string name="account_setup_title">Account Setup</string>
+    <string name="permission_denied">Permission Denied</string>
+    <string name="image_upload_message">The Image is Uploaded</string>
+    <string name="image_error">(Image error):</string>
+
+    <!--Area NewPostActivity -->
+    <string name="attestant_page_title">Post Page</string>
+    <string name="description_hint">Descreva o assedio ocorrido:</string>
+
+    <string name="add_report_btn">Denunciar</string>
+    <string name="newpost_unble_to_trace">Unble to Trace your location</string>
+    <string name="newpost_on_gps_msg">Please Turn ON your GPS Connection</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="enter_event_location_hint">Digite o local do acontecimento(rua,numero,bairro,cidade)</string>
+    <string name="pick_up_current_location_btn">Pegar localizaçao atual,clicle aqui!</string>
+    <string name="blog_list_address_textview">address</string>
+    <string name="add_photo_local_textView">Adicione uma foto do local ou do ocorrido se quiser clicando aqui:</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="attestant_btn_frag">Denuncias</string>
+    <string name="related_drawer_description">Relacionados</string>
+    <string name="places_to_avoid_title">LOCAIS A SER EVITADOS</string>
+    <string name="help_title">AJUDA</string>
+    <string name="info_title">INFORMAÇOES</string>
+    <string name="blog_title">Blogs de apoio</string>
+    <string name="protect_title">COMO SE PROTEGER</string>
+    <string name="specialist_title">DEFINIÇAO DE ESPECIALISTA</string>
+    <string name="prevention_title">TECNICAS DE PREVENÇAO</string>
+    <string name="news_drawer_description">Noticias</string>
+    <string name="related_news_title">NOTICIAS RELACIONADAS</string>
+    <string name="social_media_title">MIDIAS SOCIAIS</string>
+    <string name="declaration_drawer_description">Declaraçoes</string>
+    <string name="about_us_title">SOBRE NOS</string>
+    <string name="inspiration_title">INSPIRAÇOES</string>
+    <string name="mussum_ipsum">Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Suco de cevadiss deixa as pessoas mais interessantis. Atirei o pau no gatis, per gatis num morreus. Paisis, filhis, espiritis santis. Viva Forevis aptent taciti sociosqu ad litora torquent. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Detraxit consequat et quo num tendi nada. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Sapien in monti palavris qui num significa nadis i pareci latim. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Manduma pindureta quium dia nois paga. Pra lá , depois divoltis porris, paradis. Aenean aliquam molestie leo, vitae iaculis nisl. Diuretics paradis num copo é motivis de denguis. Casamentiss faiz malandris se pirulitá. Interagi no mé, cursus quis, vehicula ac nisi.</string>
+    <string name="body_builder_ipsun">AHHHHHHHHHHHHHHHHHHHHHH..., porra! Birl! Ajuda o maluco que tá doente. Sai de casa comi pra caralho porra. É nóis caraio é trapezera buscando caraio! Ele tá olhando pra gente. Vai subir árvore é o caralho porra! Sai filho da puta! Ele tá olhando pra gente. Ajuda o maluco que tá doente. É verão o ano todo vem cumpadi. Vai subir árvore é o caralho porra! Sai de casa comi pra caralho porra. Sai filho da puta! Que não vai dá rapaiz, não vai dá essa porra. Boraaa, Hora do Show Porra. Que não vai dá rapaiz, não vai dá essa porra. Eu quero esse 13 daqui a pouquinho aí. Eita porra!, tá saindo da jaula o monstro! Aqui nóis constrói fibra, não é água com músculo. É 37 anos caralho! Vamo monstro! Sabe o que é isso daí? Trapézio descendente é o nome disso aí. Eita porra!, tá saindo da jaula o monstro! Bora caralho, você quer ver essa porra velho. Vem porra! Sai de casa comi pra caralho porra. É esse que a gente quer, é ele que nóis vamo buscar. Ele tá olhando pra gente. AHHHHHHHHHHHHHHHHHHHHHH..., porra! Sai filho da puta! É esse que a gente quer, é ele que nóis vamo buscar.</string>
+    <string name="post_was_added">Post was added</string>
+    <string name="email_existent">EMAIL DE AJUDA</string>
+    <string name="setup_parent_title">FILIAÇAO</string>
+    <string name="setup_email_existent_hint">EMAIL</string>
+    <string name="setup_phone_title">TELEFONE</string>
+    <string name="setup_phone_hint">TELEFONE</string>
+
+    <string name="setup_name_title">SEU NOME</string>
+
+    <string name="setup_parents_hint">NOME DO MAE OU PAI</string>
+
+
+    <string name="circle">
+M527.023,71.8233 C780.213,71.8233,985.464,277.075,985.464,530.265
+C985.464,783.455,780.213,988.707,527.023,988.707
+C273.832,988.707,68.5809,783.455,68.5809,530.265
+C68.5809,277.075,273.832,71.8233,527.023,71.8233 Z
+  </string>
+    <string name="forgotem_pass">Esqueceu a senha?</string>
+    <string name="pass_text">SENHA</string>
+    <string name="confirm_pass">Confirme a senha</string>
+    <string name="blogs">Blogs</string>
+    <string name="text_apresentaçao_menu">Nos Somos um sistema de denuncia e monitoramento de abusos de qualquer natureza visando alertar autoridades e mostrar aos usuarios estatisticas.Para nos conhecer e conhecer nosso sistema :</string>
+    <string name="assEscolar">Assédio Escolar</string>
+    <string name="assMoral">Assédio Moral </string>
+    <string name="assSexual">Assédio Sexual</string>
+    <string name="Bullying">Bullying</string>
+    <string name="assDom">Violência Domiciliar</string>
+    <string name="assTrab">Violência no Trabalho</string>
+    <string name="assSex">Violência Sexual</string>
+    <string name="outros_tipos_de_abuso">Outros tipos de abuso</string>
+
+    <integer name="circle_original_width">1062</integer>
+    <integer name="circle_original_height">1062</integer>
+
+</resources>
