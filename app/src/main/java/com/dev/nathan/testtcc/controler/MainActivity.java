@@ -331,7 +331,8 @@ public class MainActivity extends AppCompatActivity
 
     private void replaceFragment(Fragment fragment){
 
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction().setCustomAnimations( R.anim.slide_in_left, R.anim.slide_out_left);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager()
+                .beginTransaction().setCustomAnimations( R.anim.slide_in_left, R.anim.slide_out_left);
         if(fragment == homeFragment){
 
             fragmentTransaction.hide(helpFragment);

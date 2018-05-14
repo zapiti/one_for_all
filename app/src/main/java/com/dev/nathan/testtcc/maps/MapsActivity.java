@@ -205,13 +205,15 @@ public class MapsActivity extends BaseGoogleMapsActivity {
 
         try {
             // May throw an IOException
-            address = coder.getFromLocationName(strAddress, 1);
+            address = coder.getFromLocationName(strAddress, 5);
             if (address == null) {
                 return null;
+            }else {
+
+//                Address location = address.get(0);
+//                p1 = new LatLng(location.getLatitude(), location.getLongitude() );
             }
 
-            Address location = address.get(0);
-            p1 = new LatLng(location.getLatitude(), location.getLongitude() );
 
         } catch (IOException ex) {
 
