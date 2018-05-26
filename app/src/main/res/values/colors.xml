@@ -41,5 +41,17 @@
     <color name="darkChart">#000a12</color>
     <color name="transparent">#80ffffff</color>
 
+    <color name="darkestGrey">#212121</color>
+    <color name="darkGrey">#424242</color>
+    <color name="lightMint">#80CBC4</color>
+    <color name="deepOrange">#FF5722</color>
+    <color name = "panicRed">#C62828</color>
+    <color name = "Red">#ff3232</color>
+    <color name="salmon">#fa8072</color>
+    <color name="tomato">#FF6347</color>
+    <color name="sandy">#F1FFC9</color>
+    <color name="lightestBlue">#B3F6FF</color>
+    <color name="emerald">#50c878</color>
+    <color name="white">#ffffff</color>
 
 </resources>

@@ -5,8 +5,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.dev.nathan.testtcc.controler.MainActivity;
-import com.dev.nathan.testtcc.maps.MapsActivity;
+import com.dev.nathan.testtcc.component.MapsActivity;
+import com.dev.nathan.testtcc.test.InitialActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -26,7 +26,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private void goToMain() {
         Intent intent = new Intent(SplashScreenActivity.this,
-               MapsActivity.class);
+               InitialActivity.class);
         startActivity(intent);
         finish();
     }

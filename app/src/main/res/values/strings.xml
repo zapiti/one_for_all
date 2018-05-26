@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name"> ONE FOR ALL </string>
+
+
+
+    <array name="menuOptions">
+        <item>Home</item>
+        <item>Denunciar</item>
+        <item>Botão do pânico</item>
+        <item>Mapa</item>
+        <item>Perfil</item>
+        <item>Relacionados</item>
+        <item>Dicas de segurança</item>
+        <item>Sobre</item>
+
+    </array>
         
     <string name="pass_hint"> Senha </string>
         
@@ -135,8 +149,32 @@ C68.5809,277.075,273.832,71.8233,527.023,71.8233 Z
     <string name="assTrab">Violência no Trabalho</string>
     <string name="assSex">Violência Sexual</string>
     <string name="outros_tipos_de_abuso">Outros tipos de abuso</string>
+    <string name="bottom_panic">Panico</string>
 
     <integer name="circle_original_width">1062</integer>
     <integer name="circle_original_height">1062</integer>
 
+    <!--- !-->
+
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="settings_icon">Settings Icon</string>
+    <string name="panic">Panic</string>
+    <string name="close">Close</string>
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="name">name</string>
+    <string name="phone_number">phone number</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="contact_list">Contacts</string>
+    <string name="message">Message</string>
+    <string name="write_down_your_panic_message">Compose Your panic message:</string>
+    <string name="countdown">Launching</string>
+    <string name="add">Add</string>
+    <string name="delete">delete</string>
+    <string name="are_you_sure_to_delete_this_contact_from_the_contact_list">Are you sure you want to delete selected contact?</string>
+    <string name="slideToCancelHint">Slide right to cancel!</string>
+    <string name="sending_gps_coordinates_in_the_message">Send GPS coordinates in the message</string>
+    <string name="silent_mode_on_launch">Silent mode on launch</string>
+    <string name="dots">. . . . . . . . . .</string>
+    <string name="slide_right_to_cancel">Slide right to cancel!</string>
 </resources>

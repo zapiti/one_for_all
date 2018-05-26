@@ -32,8 +32,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 
-import com.dev.nathan.testtcc.controler.MainActivity;
 import com.dev.nathan.testtcc.R;
+import com.dev.nathan.testtcc.test.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -67,7 +67,7 @@ public class NewPostFragment extends Fragment {
 
     private ImageView newPostImage;
     private EditText newPostDesc;
-    private TextInputLayout newPostDescContent;
+   // private TextInputLayout newPostDescContent;
     private Spinner newPostAbuseDesc;
 
     private Uri postImageUri = null;
@@ -113,7 +113,7 @@ public class NewPostFragment extends Fragment {
 
         newPostImage =view. findViewById(R.id.attestant_post_image);
         newPostDesc = view.findViewById(R.id.attestant_post_desc);
-        newPostDescContent = view.findViewById(R.id.newPostDescContent);
+     //   newPostDescContent = view.findViewById(R.id.newPostDescContent);
 
         Button newPostBtn = view.findViewById(R.id.attestant_post_btn);
         newPostProgress = view.findViewById(R.id.attestant_post_progress);
@@ -276,7 +276,8 @@ public class NewPostFragment extends Fragment {
 
                     }
                 }else {
-                    newPostDescContent.setError("Obrigatorio");
+                   Toast.makeText(context,"Descreva o acessedio ocorrido!",Toast.LENGTH_LONG).show();
+                    load.setVisibility(View.GONE);
                 }
 
             }
@@ -380,14 +381,14 @@ public class NewPostFragment extends Fragment {
     protected void buildAlertMessageNoGps() {
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage("Please Turn ON your GPS Connection")
+        builder.setMessage("Por favor, ligue a sua conexão GPS")
                 .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     public void onClick(final DialogInterface dialog, final int id) {
                         startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
                     }
                 })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Não", new DialogInterface.OnClickListener() {
                     public void onClick(final DialogInterface dialog, final int id) {
                         dialog.cancel();
                     }

@@ -4,20 +4,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dev.nathan.testtcc.R;
+import com.dev.nathan.testtcc.test.InitialActivity;
+import com.dev.nathan.testtcc.test.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -36,6 +42,16 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
+        TextView maininit = findViewById(R.id.btngomenu);
+
+        maininit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ntent = new Intent(LoginActivity.this, InitialActivity.class);
+                startActivity(ntent);
+            }
+        });
+
 
         loginEmailText = findViewById(R.id.login_email);
         loginPassText = findViewById(R.id.login_confirm_pass);
@@ -104,10 +120,23 @@ public class LoginActivity extends AppCompatActivity {
 
             sendToMain();
 
+        }else{
+            Toast.makeText(this,"Para acesso a mais funções por favor efetuar o Login",Toast.LENGTH_LONG).show();
+
         }
 
 
     }
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent (this, InitialActivity.class);
+
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity (intent);
+
+    }
+
 
     private void sendToMain() {
 

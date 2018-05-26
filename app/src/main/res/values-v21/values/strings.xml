@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Panic Button</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="settings_icon">Settings Icon</string>
+    <string name="panic">Panic</string>
+    <string name="close">Close</string>
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="name">name</string>
+    <string name="phone_number">phone number</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="contact_list">Contacts</string>
+    <string name="message">Message</string>
+    <string name="write_down_your_panic_message">Compose Your panic message:</string>
+    <string name="countdown">Launching</string>
+    <string name="add">Add</string>
+    <string name="delete">delete</string>
+    <string name="are_you_sure_to_delete_this_contact_from_the_contact_list">Are you sure you want to delete selected contact?</string>
+    <string name="slideToCancelHint">Slide right to cancel!</string>
+    <string name="sending_gps_coordinates_in_the_message">Send GPS coordinates in the message</string>
+    <string name="silent_mode_on_launch">Silent mode on launch</string>
+    <string name="dots">. . . . . . . . . .</string>
+    <string name="slide_right_to_cancel">Slide right to cancel!</string>
+</resources>

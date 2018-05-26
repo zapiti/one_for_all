@@ -14,8 +14,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.dev.nathan.testtcc.controler.MainActivity;
 import com.dev.nathan.testtcc.R;
+import com.dev.nathan.testtcc.test.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -167,13 +167,14 @@ return view;
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
-                if(task.isSuccessful()){
+                if(task.isSuccessful() ){
 
                     Toast.makeText(getContext(), "Configurações do usuário  atualizadas.", Toast.LENGTH_LONG).show();
                     Intent mainIntent = new Intent(getContext(), MainActivity.class);
                     startActivity(mainIntent);
                     Objects.requireNonNull(getActivity()).finish();
-//todo/;resolver
+                        //todo/;resolver
+
                 } else {
 
 

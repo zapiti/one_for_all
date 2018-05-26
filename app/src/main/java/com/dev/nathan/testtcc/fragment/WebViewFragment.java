@@ -1,6 +1,7 @@
 package com.dev.nathan.testtcc.fragment;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -9,12 +10,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.TranslateAnimation;
-import android.widget.Button;
 
 import com.dev.nathan.testtcc.R;
 import com.dev.nathan.testtcc.adapter.NetworkWebViewAdapter;
 import com.dev.nathan.testtcc.model.Url;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -30,8 +33,8 @@ import java.util.Objects;
 
 
 public class WebViewFragment extends Fragment {
-    float rainfall[] = {20f, 40f, 30f, 10f, 300f};
-    String type[] = {"Noticias  ", "Ajuda ", "Saude ", "ONGs ", "Entreterimento"};
+    float rainfall [] = {20f,40f,30f,10f,300f};
+    String type[] ={"Noticias  ","Ajuda ","Saude ","ONGs ", "Entreterimento"};
 
 
     private RecyclerView url_list_view;
@@ -44,9 +47,6 @@ public class WebViewFragment extends Fragment {
     private DocumentSnapshot lastVisible;
     private Boolean isFirstPageFirstLoad = true;
 
-    Button myButton;
-    View myView;
-    boolean isUp;
 
     public WebViewFragment() {
         // Required empty public constructor
@@ -59,31 +59,6 @@ public class WebViewFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_web, container, false);
 
-        myView = view.findViewById(R.id.infoLegendWeb);
-        myButton = view.findViewById(R.id.infoButtonLegendy);
-
-        // initialize as invisible (could also do in xml)
-        myView.setVisibility(View.GONE);
-        myButton.setText("Slide up");
-        isUp = false;
-
-
-        myButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isUp) {
-                    //   slideDown(myView);
-                    myButton.setText("Slide up");
-                    myView.setVisibility(View.GONE);
-
-                } else {
-                    //   slideUp(myView);
-                    myView.setVisibility(View.VISIBLE);
-                    myButton.setText("Slide down");
-                }
-                isUp = !isUp;
-            }
-        });
 
 
         url_list = new ArrayList<>();
@@ -96,7 +71,7 @@ public class WebViewFragment extends Fragment {
         url_list_view.setAdapter(networkWebViewAdapter);
         url_list_view.setHasFixedSize(true);
 
-        if (firebaseAuth.getCurrentUser() != null) {
+        if(firebaseAuth.getCurrentUser() != null) {
 
             firebaseFirestore = FirebaseFirestore.getInstance();
 
@@ -107,9 +82,9 @@ public class WebViewFragment extends Fragment {
 
                     Boolean reachedBottom = !recyclerView.canScrollVertically(1);
 
-                    if (reachedBottom) {
+                    if(reachedBottom){
 
-                        //    loadMorePost();
+                    //    loadMorePost();
 
                     }
 
@@ -169,6 +144,43 @@ public class WebViewFragment extends Fragment {
         // Inflate the layout for this fragment
         return view;
     }
+
+
+//    public void loadMorePost(){
+//
+//        if(firebaseAuth.getCurrentUser() != null) {
+//
+//            Query nextQuery = firebaseFirestore.collection("WebView")
+//                    .orderBy("url", Query.Direction.DESCENDING)
+//                    .startAfter(lastVisible)
+//                    .limit(3);
+//
+//            nextQuery.addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>() {
+//                @Override
+//                public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
+//
+//                    if (!documentSnapshots.isEmpty()) {
+//
+//                        lastVisible = documentSnapshots.getDocuments().get(documentSnapshots.size() - 1);
+//                        for (DocumentChange doc : documentSnapshots.getDocumentChanges()) {
+//
+//                            if (doc.getType() == DocumentChange.TypeBlog.ADDED) {
+//
+//                                String urlId = doc.getDocument().getId();
+//                                Url url = doc.getDocument().toObject(Url.class);
+//                                url_list.add(url);
+//
+//                                networkWebViewAdapter.notifyDataSetChanged();
+//                            }
+//
+//                        }
+//                    }
+//
+//                }
+//            });
+//
+//        }
+//
+//    }
+
 }
-
-
