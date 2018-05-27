@@ -97,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
                 android:layout_marginEnd="132dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
                 android:text="Tipo do assédio (para as estatísticas)"
                 app:layout_constraintEnd_toEndOf="parent"
