@@ -39,6 +39,7 @@ public class ProfileFragment extends Fragment {
     private EditText setupFiliacao;
     private EditText setupTelefone;
     private EditText setupEmailExistent;
+    private EditText setupCpf;
     private LinearLayout load;
 
     private Button setupBtn;
@@ -77,7 +78,7 @@ public class ProfileFragment extends Fragment {
         setupFiliacao = view.findViewById(R.id.setup_parent);
         setupTelefone =view. findViewById(R.id.setup_telefone);
         setupEmailExistent =view. findViewById(R.id.setup_email_existente);
-
+        setupCpf =view.findViewById(R.id.setup_cpf);
 
         load.setVisibility(View.VISIBLE);
         setupBtn.setEnabled(false);
@@ -94,13 +95,14 @@ public class ProfileFragment extends Fragment {
                         String filiacao = task.getResult().getString("filiacao");
                         String telefone = task.getResult().getString("telefone");
                         String emailexistent = task.getResult().getString("endexistent");
-
+                        String cpf = task.getResult().getString("cpf");
 
 
                         setupName.setText(name);
                         setupFiliacao .setText(filiacao);
                         setupTelefone .setText(telefone);
                         setupEmailExistent.setText(emailexistent);
+                        setupCpf.setText(cpf);
                     }
 
                 } else {
@@ -125,8 +127,9 @@ public class ProfileFragment extends Fragment {
                 final String user_telefone = setupTelefone.getText().toString();
                 final String user_filiacao = setupFiliacao.getText().toString();
                 final String user_emailexistent = setupEmailExistent.getText().toString();
+                final String user_cpf = setupCpf.getText().toString();
 
-                if (!TextUtils.isEmpty(user_name) ) {
+                if (!TextUtils.isEmpty(user_name) && !TextUtils.isEmpty(user_cpf) && !TextUtils.isEmpty(user_filiacao)) {
 
                     load.setVisibility(View.VISIBLE);
 
@@ -138,10 +141,15 @@ public class ProfileFragment extends Fragment {
 
 
 
-                    storeFirestore( user_name,user_emailexistent,user_filiacao,user_telefone);
+                    storeFirestore( user_name,user_emailexistent,user_filiacao,user_telefone,user_cpf);
 
 
 
+                }else{
+                    load.setVisibility(View.GONE);
+                    if (TextUtils.isEmpty(user_name))Toast.makeText(getContext(),"Nome é obrigatorio",Toast.LENGTH_SHORT).show();
+                    if (TextUtils.isEmpty(user_cpf))Toast.makeText(getContext(),"Cpf é obrigatorio",Toast.LENGTH_SHORT).show();
+                    if (TextUtils.isEmpty(user_filiacao))Toast.makeText(getContext(),"Nome da Mãe ou Pai é obrigatorio",Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -154,7 +162,7 @@ return view;
 
     }
 
-    private void storeFirestore(String user_name, String user_emailexistent, String user_filiacao, String user_telefone) {
+    private void storeFirestore(String user_name, String user_emailexistent, String user_filiacao, String user_telefone,String user_cpf) {
 
 
         Map<String, String> userMap = new HashMap<>();
@@ -162,6 +170,7 @@ return view;
         userMap.put("filiacao", user_filiacao);
         userMap.put("telefone", user_telefone);
         userMap.put("endexistent", user_emailexistent);
+        userMap.put("cpf", user_cpf);
 
         firebaseFirestore.collection("Users").document(user_id).set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

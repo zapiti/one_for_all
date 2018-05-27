@@ -46,7 +46,7 @@
         
     <string name="setup_save_btn"> Salvar configurações da conta </string>
         
-    <string name="setup_name_hint_text"> NOME </string>
+    <string name="setup_name_hint_text"> NOME* </string>
         
     <string name="setup_btn_name_text"> Salvar Alteraçoes</string>
         
@@ -130,7 +130,7 @@
 
     <string name="setup_name_title">SEU NOME</string>
 
-    <string name="setup_parents_hint">NOME DO MAE OU PAI</string>
+    <string name="setup_parents_hint">NOME DO MAE OU PAI*</string>
 
 
     <string name="circle">
