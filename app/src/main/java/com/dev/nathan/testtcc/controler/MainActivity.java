@@ -16,13 +16,10 @@ import android.widget.Toast;
 
 import com.dev.nathan.testtcc.R;
 import com.dev.nathan.testtcc.fragment.MapsFragment;
-import com.dev.nathan.testtcc.fragment.FriendsFragment;
 import com.dev.nathan.testtcc.fragment.HelpFragment;
 import com.dev.nathan.testtcc.fragment.HomeFragment;
 import com.dev.nathan.testtcc.fragment.NewPostFragment;
-import com.dev.nathan.testtcc.fragment.PlacesToAvoidFragment;
 import com.dev.nathan.testtcc.fragment.ProfileFragment;
-import com.dev.nathan.testtcc.fragment.RelatedFragmentOptionsArea;
 import com.dev.nathan.testtcc.fragment.WebViewFragment;
 import com.dev.nathan.testtcc.panicbutton.MainPanicButtonActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -41,83 +38,57 @@ import nl.psdcompany.duonavigationdrawer.views.DuoMenuView;
 import nl.psdcompany.duonavigationdrawer.widgets.DuoDrawerToggle;
 
 public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMenuClickListener {
+    //Declaração de variaveis
     private MenuAdapter mMenuAdapter;
     private ViewHolder mViewHolder;
     private MapsFragment mMap;
-    private Button mButonn;
-
+    private Button mLogout;
     private ArrayList<String> mTitles = new ArrayList<>();
     private FirebaseAuth mAuth;
     private FirebaseFirestore firebaseFirestore;
-
-
-
-
-    private RelatedFragmentOptionsArea relatedFragmentOptionsArea;
-    private HelpFragment helpFragment;
-    private PlacesToAvoidFragment placesToAvoidFragment;
-
-    private HomeFragment homeFragment;
-    private FriendsFragment notificationFragment;
-    private ProfileFragment profileFragment;
-    private NewPostFragment newPostFragment;
-    private WebViewFragment webViewFragment;
     private TextView mTitle;
     private TextView mT2;
-
+    //Criando a view
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial);
+        //Inicialização de variaveis
         mTitles = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.menuOptions)));
-
         mMap = new MapsFragment();
-        // Initialize the views
         mViewHolder = new ViewHolder();
         mTitle.setText("Um Por Todos");
-        mButonn.setVisibility(View.VISIBLE);
-        mButonn.setBackgroundTintList(ColorStateList.valueOf(Color.BLUE));
+        mLogout.setVisibility(View.VISIBLE);
+        mLogout.setBackgroundTintList(ColorStateList.valueOf(Color.BLUE));
 
-        mButonn.setOnClickListener(new View.OnClickListener() {
+        //Quando clicar em deslogar
+        mLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                intro();
             }
         });
 
-
-        // Handle toolbar actions
+        // Açoes da toolbar
         handleToolbar();
-
-        // Handle menu actions
         handleMenu();
-
-        // Handle drawer actions
         handleDrawer();
 
-        // Show main fragment in container
+        // Mostrar Fragmento principal
         goToFragment(new HomeFragment());
         mMenuAdapter.setViewSelected(0, true);
         setTitle(mTitles.get(0));
 
+        //Inicializando Firebase
         mAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
-        // FRAGMENTS
-        homeFragment = new HomeFragment();
-        notificationFragment = new FriendsFragment();
-        profileFragment = new ProfileFragment();
-        newPostFragment = new NewPostFragment();
-        helpFragment = new HelpFragment();
-        placesToAvoidFragment = new PlacesToAvoidFragment();
-        relatedFragmentOptionsArea = new RelatedFragmentOptionsArea(getString(R.string.info_title));
-        webViewFragment = new WebViewFragment();
+
 
     }
-
+    //Funçoes da barra de navegação entra fragmentos
     private void handleToolbar() {
         setSupportActionBar(mViewHolder.mToolbar);
     }
-
     private void handleDrawer() {
         DuoDrawerToggle duoDrawerToggle = new DuoDrawerToggle(this,
                 mViewHolder.mDuoDrawerLayout,
@@ -129,7 +100,6 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
         duoDrawerToggle.syncState();
 
     }
-
     private void handleMenu() {
         mMenuAdapter = new MenuAdapter(mTitles);
 
@@ -146,93 +116,67 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
     public void onHeaderClicked() {
         Toast.makeText(this, "onHeaderClicked", Toast.LENGTH_SHORT).show();
     }
-
+    //Funçao de trocar fragmentos
     private void goToFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
         transaction.replace(R.id.container, fragment)
                 .commit();
     }
 
     @Override
     public void onOptionClicked(int position, Object objectClicked) {
-        // Set the toolbar title
+        //Titulo
         setTitle(mTitles.get(position));
-
-        // Set the right options selected
+        //Funcao da barra de navegaçao
         mMenuAdapter.setViewSelected(position, true);
-
-        // Navigate to the right fragment
-
-
-
+        //Navegação entre fragmentos quando clicar em cada posiçao
         switch (position) {
-
-            case 0 :{ Toast.makeText(this,"posiçao"+position,Toast.LENGTH_LONG).show();
+            case 0 :{
                 goToFragment(new HomeFragment());
                 break;
             }
-            case 1 :{ Toast.makeText(this,"posiçao"+position,Toast.LENGTH_LONG).show();
+            case 1 :{
                 goToFragment(new NewPostFragment());
                 break;
             }
-
-            case 2 :{ Toast.makeText(this,"posiçao"+position,Toast.LENGTH_LONG).show();
+            case 2 :{
                 startActivity( new Intent(this, MainPanicButtonActivity.class));
                 break;
             }
-            case 3 :{ Toast.makeText(this,"posiçao"+position,Toast.LENGTH_LONG).show();
+            case 3 :{
                 goToFragment(new MapsFragment());
                 break;
             }
-            case 4 :{ Toast.makeText(this,"posiçao"+position,Toast.LENGTH_LONG).show();
+            case 4 :{
                 goToFragment(new ProfileFragment());
                 break;
             }
-            case 5 :{ Toast.makeText(this,"posiçao"+position,Toast.LENGTH_LONG).show();
+            case 5 :{
                 goToFragment(new WebViewFragment());
                 break;
             }
             case 6 : {
-                Toast.makeText(this, "posiçao" + position, Toast.LENGTH_LONG).show();
                 goToFragment(new HelpFragment());
                 break;
             }
-            case 7 :{ Toast.makeText(this,"posiçao"+position,Toast.LENGTH_LONG).show();
+            case 7 :{
                     goToFragment(new HelpFragment());
                     break;
-
             }
-
             default:
                 goToFragment(mMap);
                 break;
         }
 
-        // Close the drawer
+        // Fechar drawer
         mViewHolder.mDuoDrawerLayout.closeDrawer();
     }
-
-    private void logOut() {
-
-        mAuth.signOut();
-
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        if(currentUser == null){
-            sendToLogin();
-        }
-
-    }
-
+    // Manda para o login
     private void sendToLogin() {
-
         Intent loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
        startActivity(loginIntent);
         finish();
-
-
     }
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -274,9 +218,7 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
         }
 
     }
-
-
-
+    //Funçao de deslogar
     private void intro() {
         mAuth.signOut();
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -295,7 +237,7 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
             mDuoDrawerLayout = (DuoDrawerLayout) findViewById(R.id.drawer);
             mDuoMenuView = (DuoMenuView) mDuoDrawerLayout.getMenuView();
             mToolbar = (Toolbar) findViewById(R.id.toolbar);
-            mButonn = findViewById(R.id.duo_view_footer_text);
+            mLogout = findViewById(R.id.duo_view_footer_text);
 
             mTitle = findViewById(R.id.duo_view_header_text_title);
             mT2 = findViewById(R.id.duo_view_header_text_sub_title);

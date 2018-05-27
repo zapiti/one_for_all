@@ -62,7 +62,6 @@
         <activity android:name=".controler.InitialActivity" >
 
         </activity>
-        <activity android:name=".controler.secondActivity" />
         <activity android:name=".controler.MainActivity"
             android:parentActivityName=".controler.InitialActivity"/>
         <activity android:name=".panicbutton.MainPanicButtonActivity"

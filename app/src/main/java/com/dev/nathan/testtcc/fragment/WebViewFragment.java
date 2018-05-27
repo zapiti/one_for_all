@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.dev.nathan.testtcc.R;
 import com.dev.nathan.testtcc.adapter.NetworkWebViewAdapter;
+import com.dev.nathan.testtcc.helper.BottomNavigationViewHelper;
 import com.dev.nathan.testtcc.model.Url;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
@@ -56,7 +57,6 @@ public class WebViewFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_web, container, false);
 
 

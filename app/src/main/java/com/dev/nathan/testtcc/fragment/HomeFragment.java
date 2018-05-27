@@ -28,18 +28,16 @@ import java.util.Objects;
 
 
 public class HomeFragment extends Fragment {
-
+    //declarção de variaveis
     private List<AttestantPost> blog_list;
-
     private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth firebaseAuth;
     private AttestantRecyclerAdapter attestantRecyclerAdapter;
-
     private DocumentSnapshot lastVisible;
     private Boolean isFirstPageFirstLoad = true;
 
     public HomeFragment() {
-        // Required empty public constructor
+        // Contrutor vazio
     }
 
 
@@ -59,56 +57,39 @@ public class HomeFragment extends Fragment {
         blog_list_view.setAdapter(attestantRecyclerAdapter);
         blog_list_view.setHasFixedSize(true);
 
+        //Validando usuario logado para carregar as postagens
         if(firebaseAuth.getCurrentUser() != null) {
-
             firebaseFirestore = FirebaseFirestore.getInstance();
-
             blog_list_view.addOnScrollListener(new RecyclerView.OnScrollListener() {
                 @Override
                 public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                     super.onScrolled(recyclerView, dx, dy);
-
                     Boolean reachedBottom = !recyclerView.canScrollVertically(1);
-
                     if(reachedBottom){
-
                         loadMorePost();
-
                     }
-
                 }
             });
-
+            //Populando adaptador com informaçoes vindas do banco firestore
             Query firstQuery = firebaseFirestore.collection("Posts").orderBy("dhUpload", Query.Direction.DESCENDING).limit(3);
             firstQuery.addSnapshotListener(Objects.requireNonNull(getActivity()), new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
-
+                    //tratativa de erro
                     if (documentSnapshots != null) {
                         if (!documentSnapshots.isEmpty()) {
-
                             if (isFirstPageFirstLoad) {
-
                                 lastVisible = documentSnapshots.getDocuments().get(documentSnapshots.size() - 1);
                                 blog_list.clear();
-
                             }
-
                             for (DocumentChange doc : documentSnapshots.getDocumentChanges()) {
-
                                 if (doc.getType() == DocumentChange.Type.ADDED) {
-
                                     String blogPostId = doc.getDocument().getId();
                                     AttestantPost attestantPost = doc.getDocument().toObject(AttestantPost.class).withId(blogPostId);
-
                                     if (isFirstPageFirstLoad) {
-
                                         blog_list.add(attestantPost);
-
                                     } else {
-
                                         blog_list.add(0, attestantPost);
-
                                     }
 
 

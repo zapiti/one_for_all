@@ -19,10 +19,10 @@ public class BottomNavigationViewHelper {
             shiftingMode.setAccessible(false);
             for (int i = 0; i < menuView.getChildCount(); i++) {
                 BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
-                //noinspection RestrictedApi
+                //restriçoes da api
                 item.setShiftingMode(false);
-                // set once again checked value, so view will be updated
-                //noinspection RestrictedApi
+
+                // setou mais uma vez o valor verificado, então a view será atualizada
                 item.setChecked(item.getItemData().isChecked());
             }
         } catch (NoSuchFieldException e) {
@@ -31,4 +31,5 @@ public class BottomNavigationViewHelper {
             Log.e("BottomNav", "Unable to change value of shift mode", e);
         }
     }
+
 }

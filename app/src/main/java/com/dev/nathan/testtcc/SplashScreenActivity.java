@@ -18,6 +18,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         Handler handle = new Handler();
+        //metodo de delay de 2 segundos para escolha ao abrir
         handle.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -28,18 +29,14 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     private void goToMain() {
-
-
-
         if (currentUser != null) {
-
+            //se logado mandar para tela principal
             Intent intent = new Intent(SplashScreenActivity.this,
                     MainActivity.class);
             startActivity(intent);
             finish();
-
-
         }else {
+            //se nao estiver logado mandar para a tela inicial
             Intent intent = new Intent(SplashScreenActivity.this,
                     InitialActivity.class);
             startActivity(intent);

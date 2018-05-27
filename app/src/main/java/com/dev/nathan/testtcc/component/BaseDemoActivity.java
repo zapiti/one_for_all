@@ -26,24 +26,23 @@ import com.google.android.gms.maps.SupportMapFragment;
 
 public abstract class BaseDemoActivity extends FragmentActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
-
+    //chama e referencia os mapas
     protected int getLayoutId() {
         return R.layout.activity_maps;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //chamada dos mapas para ser extendida as outras classes
         setContentView(getLayoutId());
         setUpMap();
     }
-
     @Override
     protected void onResume() {
         super.onResume();
         setUpMap();
     }
-
+    //cria o mapa
     @Override
     public void onMapReady(GoogleMap map) {
         if (mMap != null) {
@@ -52,7 +51,6 @@ public abstract class BaseDemoActivity extends FragmentActivity implements OnMap
         mMap = map;
         startDemo();
     }
-
     private void setUpMap() {
         ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
     }

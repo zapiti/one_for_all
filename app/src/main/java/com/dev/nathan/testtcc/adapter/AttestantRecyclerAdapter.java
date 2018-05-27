@@ -40,23 +40,20 @@ import java.util.Map;
 import java.util.Objects;
 
 public class AttestantRecyclerAdapter extends RecyclerView.Adapter<AttestantRecyclerAdapter.ViewHolder> {
-
+    //Declaração de variaveis
     private List<AttestantPost> post_list;
     public Context context;
-
     private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth firebaseAuth;
-
+    //Construtor deste adaptador
     public AttestantRecyclerAdapter(List<AttestantPost> blog_list){
         this.post_list = blog_list;
-
-
     }
-
+    //Inicializando a listagem
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
+        //Inicializando variaveis
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.attestant_list_item, parent, false);
         context = parent.getContext();
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -66,10 +63,8 @@ public class AttestantRecyclerAdapter extends RecyclerView.Adapter<AttestantRecy
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
-
         holder.setIsRecyclable(false);
-
-
+        //Ordenando os itens da listagem
         final String blogPostId = post_list.get(position).BlogPostId;
         final String currentUserId = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
 
@@ -97,29 +92,8 @@ public class AttestantRecyclerAdapter extends RecyclerView.Adapter<AttestantRecy
 
         }
 
-//        //Get Delations Count
-//        firebaseFirestore.collection("Posts/" + blogPostId + "/Delations").addSnapshotListener( new EventListener<QuerySnapshot>() {
-//            @Override
-//            public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
-//
-//                if (documentSnapshots != null) {
-//                    if (!documentSnapshots.isEmpty()) {
-//
-//                        int count = documentSnapshots.size();
-//
-//                        holder.updateDelationsCount(count);
-//
-//                    } else {
-//
-//                        holder.updateDelationsCount(0);
-//
-//                    }
-//                }
-//            }
-//        });
 
-
-        //Get Delations
+        //Pegando denuncia de postagem
         firebaseFirestore.collection("Posts/" + blogPostId + "/Delations").document(currentUserId).addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(DocumentSnapshot documentSnapshot, FirebaseFirestoreException e) {
@@ -138,11 +112,6 @@ public class AttestantRecyclerAdapter extends RecyclerView.Adapter<AttestantRecy
                 }
             }
         });
-
-        //Delations Feature
-
-
-
 
         holder.attestantDangerButton.setOnClickListener(new View.OnClickListener() {
             @Override
