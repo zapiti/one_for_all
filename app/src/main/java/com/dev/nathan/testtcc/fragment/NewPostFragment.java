@@ -350,10 +350,19 @@ public class NewPostFragment extends Fragment {
 
             Location location2 = locationManager.getLastKnownLocation(LocationManager. PASSIVE_PROVIDER);
 
+            double latti = 0;
+            double longi = 0;
 
-                double latti = location.getLatitude();
-                double longi = location.getLongitude();
-
+            if (location != null) {
+                latti = location.getLatitude();
+                 longi = location.getLongitude();
+            } else if(location1 != null ){
+                latti = location1.getLatitude();
+                longi = location1.getLongitude();
+            }else if(location2 != null){
+                latti = location2.getLatitude();
+                longi = location2.getLongitude();
+            }
 
                 try {
                     addresses = geocoder.getFromLocation(latti, longi, 1);
