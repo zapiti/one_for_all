@@ -1,4 +1,4 @@
-package com.dev.nathan.testtcc.inicializador;
+package com.dev.nathan.testtcc.controler;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.dev.nathan.testtcc.R;
 import com.dev.nathan.testtcc.component.MapsActivity;
+import com.dev.nathan.testtcc.controler.MenuAdapter;
+import com.dev.nathan.testtcc.fragment.MainFragment;
 import com.dev.nathan.testtcc.fragment.MapsFragment;
 import com.dev.nathan.testtcc.controler.LoginActivity;
 

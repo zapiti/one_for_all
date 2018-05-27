@@ -29,12 +29,12 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
             android:name=".controler.CommentsActivity"
-            android:parentActivityName=".inicializador.MainActivity" />
+            android:parentActivityName=".controler.MainActivity" />
         <activity
             android:name=".controler.WebViewActivity"
-            android:parentActivityName=".inicializador.MainActivity" />
+            android:parentActivityName=".controler.MainActivity" />
         <activity android:name=".controler.LoginActivity"
-            android:parentActivityName=".inicializador.InitialActivity" />
+            android:parentActivityName=".controler.InitialActivity" />
         <activity android:name=".controler.RegisterActivity" />
         <activity
             android:name=".SplashScreenActivity"
@@ -59,14 +59,14 @@
 
         </activity>
 
-        <activity android:name=".inicializador.InitialActivity" >
+        <activity android:name=".controler.InitialActivity" >
 
         </activity>
-        <activity android:name=".inicializador.secondActivity" />
-        <activity android:name=".inicializador.MainActivity"
-            android:parentActivityName=".inicializador.InitialActivity"/>
+        <activity android:name=".controler.secondActivity" />
+        <activity android:name=".controler.MainActivity"
+            android:parentActivityName=".controler.InitialActivity"/>
         <activity android:name=".panicbutton.MainPanicButtonActivity"
-            android:parentActivityName=".inicializador.MainActivity" />
+            android:parentActivityName=".controler.MainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

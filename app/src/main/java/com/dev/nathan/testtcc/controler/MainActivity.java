@@ -1,4 +1,4 @@
-package com.dev.nathan.testtcc.inicializador;
+package com.dev.nathan.testtcc.controler;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -16,8 +16,6 @@ import android.widget.Toast;
 
 import com.dev.nathan.testtcc.R;
 import com.dev.nathan.testtcc.fragment.MapsFragment;
-import com.dev.nathan.testtcc.controler.LoginActivity;
-import com.dev.nathan.testtcc.controler.SetupActivity;
 import com.dev.nathan.testtcc.fragment.FriendsFragment;
 import com.dev.nathan.testtcc.fragment.HelpFragment;
 import com.dev.nathan.testtcc.fragment.HomeFragment;

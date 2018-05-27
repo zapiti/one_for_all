@@ -1,4 +1,4 @@
-package com.dev.nathan.testtcc.inicializador;
+package com.dev.nathan.testtcc.controler;
 
 import android.view.View;
 import android.view.ViewGroup;

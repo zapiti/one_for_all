@@ -32,7 +32,7 @@ import android.widget.Toast;
 
 
 import com.dev.nathan.testtcc.R;
-import com.dev.nathan.testtcc.inicializador.MainActivity;
+import com.dev.nathan.testtcc.controler.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

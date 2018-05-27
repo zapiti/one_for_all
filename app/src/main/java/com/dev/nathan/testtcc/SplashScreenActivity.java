@@ -5,8 +5,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.dev.nathan.testtcc.inicializador.InitialActivity;
-import com.dev.nathan.testtcc.inicializador.MainActivity;
+import com.dev.nathan.testtcc.controler.InitialActivity;
+import com.dev.nathan.testtcc.controler.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
