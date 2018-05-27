@@ -5,4 +5,9 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">172dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="bottom_panel_height">68dp</dimen>
+    <dimen name="fab_bottom_padding">100dp</dimen>
+    <dimen name="fab_right_gap">4dp</dimen>
+    <dimen name="fab_item_gap">16dp</dimen>
 </resources>

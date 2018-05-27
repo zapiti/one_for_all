@@ -1,13 +1,11 @@
-package com.dev.nathan.testtcc.test;
+package com.dev.nathan.testtcc.inicializador;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -16,15 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dev.nathan.testtcc.R;
-import com.dev.nathan.testtcc.controler.LoginActivity;
-import com.dev.nathan.testtcc.fragment.HelpFragment;
-import com.dev.nathan.testtcc.fragment.HomeFragment;
 import com.dev.nathan.testtcc.fragment.MapsFragment;
-import com.dev.nathan.testtcc.fragment.NewPostFragment;
-import com.dev.nathan.testtcc.fragment.ProfileFragment;
-import com.dev.nathan.testtcc.fragment.WebViewFragment;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.dev.nathan.testtcc.panicbutton.MainPanicButtonActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -124,7 +115,11 @@ public class InitialActivity extends AppCompatActivity implements DuoMenuView.On
 
                 if(position == 3){
                     goToFragment(new MapsFragment());
-                }else {
+                }else if (position ==2){
+                    startActivity( new Intent(this, MainPanicButtonActivity.class));
+                }
+
+                else {
 
                     Validar();
 

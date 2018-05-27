@@ -1,4 +1,4 @@
-package com.dev.nathan.testtcc.test;
+package com.dev.nathan.testtcc.inicializador;
 
 
 import android.content.Context;

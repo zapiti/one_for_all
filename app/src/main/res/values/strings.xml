@@ -2,6 +2,8 @@
     <string name="app_name"> ONE FOR ALL </string>
 
 
+    <string name="action_add_contact">Adiciona um contato</string>
+    <string name="bottom_panel_title">Contatos</string>
 
     <array name="menuOptions">
         <item>Home</item>

@@ -5,9 +5,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.dev.nathan.testtcc.component.MapsActivity;
-import com.dev.nathan.testtcc.test.InitialActivity;
-import com.dev.nathan.testtcc.test.MainActivity;
+import com.dev.nathan.testtcc.inicializador.InitialActivity;
+import com.dev.nathan.testtcc.inicializador.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

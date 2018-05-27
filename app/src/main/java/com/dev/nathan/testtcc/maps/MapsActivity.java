@@ -22,7 +22,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.dev.nathan.testtcc.R;
-import com.dev.nathan.testtcc.controler.MainActivity;
+
+import com.dev.nathan.testtcc.inicializador.MainActivity;
 import com.dev.nathan.testtcc.model.AttestantPost;
 import com.dev.nathan.testtcc.model.Url;
 import com.github.mikephil.charting.charts.Chart;

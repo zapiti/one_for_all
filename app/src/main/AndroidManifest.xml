@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-feature android:name="android.hardware.location.gps" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -28,12 +29,12 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
             android:name=".controler.CommentsActivity"
-            android:parentActivityName=".test.MainActivity" />
+            android:parentActivityName=".inicializador.MainActivity" />
         <activity
             android:name=".controler.WebViewActivity"
-            android:parentActivityName=".test.MainActivity" />
+            android:parentActivityName=".inicializador.MainActivity" />
         <activity android:name=".controler.LoginActivity"
-            android:parentActivityName=".test.InitialActivity" />
+            android:parentActivityName=".inicializador.InitialActivity" />
         <activity android:name=".controler.RegisterActivity" />
         <activity
             android:name=".SplashScreenActivity"
@@ -58,12 +59,14 @@
 
         </activity>
 
-        <activity android:name=".test.InitialActivity" >
+        <activity android:name=".inicializador.InitialActivity" >
 
         </activity>
-        <activity android:name=".test.secondActivity" />
-        <activity android:name=".test.MainActivity"
-            android:parentActivityName=".test.InitialActivity"/>
+        <activity android:name=".inicializador.secondActivity" />
+        <activity android:name=".inicializador.MainActivity"
+            android:parentActivityName=".inicializador.InitialActivity"/>
+        <activity android:name=".panicbutton.MainPanicButtonActivity"
+            android:parentActivityName=".inicializador.MainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

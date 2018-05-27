@@ -1,6 +1,5 @@
-package com.dev.nathan.testtcc.test;
+package com.dev.nathan.testtcc.inicializador;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -27,6 +26,7 @@ import com.dev.nathan.testtcc.fragment.PlacesToAvoidFragment;
 import com.dev.nathan.testtcc.fragment.ProfileFragment;
 import com.dev.nathan.testtcc.fragment.RelatedFragmentOptionsArea;
 import com.dev.nathan.testtcc.fragment.WebViewFragment;
+import com.dev.nathan.testtcc.panicbutton.MainPanicButtonActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
             }
 
             case 2 :{ Toast.makeText(this,"posiçao"+position,Toast.LENGTH_LONG).show();
-                goToFragment(notificationFragment);
+                startActivity( new Intent(this, MainPanicButtonActivity.class));
                 break;
             }
             case 3 :{ Toast.makeText(this,"posiçao"+position,Toast.LENGTH_LONG).show();

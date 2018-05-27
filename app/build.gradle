@@ -67,6 +67,10 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     implementation 'com.github.armcha:SpaceNavigationView:1.6.0'
     implementation 'nl.psdcompany:duo-navigation-drawer:2.0.8'
+
+    implementation 'com.sothree.slidinguppanel:library:2.0.4'
+    implementation 'com.shamanland:fab:0.0.7'
+    implementation 'com.android.support:support-v4:27.1.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

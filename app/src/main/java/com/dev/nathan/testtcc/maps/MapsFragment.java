@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.dev.nathan.testtcc.R;
-import com.dev.nathan.testtcc.controler.MainActivity;
+
 import com.dev.nathan.testtcc.model.AttestantPost;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
