@@ -1,9 +1,13 @@
 package com.dev.nathan.testtcc.test;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -12,7 +16,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dev.nathan.testtcc.R;
+import com.dev.nathan.testtcc.controler.LoginActivity;
+import com.dev.nathan.testtcc.fragment.HelpFragment;
+import com.dev.nathan.testtcc.fragment.HomeFragment;
 import com.dev.nathan.testtcc.fragment.MapsFragment;
+import com.dev.nathan.testtcc.fragment.NewPostFragment;
+import com.dev.nathan.testtcc.fragment.ProfileFragment;
+import com.dev.nathan.testtcc.fragment.WebViewFragment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -103,25 +115,41 @@ public class InitialActivity extends AppCompatActivity implements DuoMenuView.On
     @Override
     public void onOptionClicked(int position, Object objectClicked) {
         // Set the toolbar title
-        setTitle(mTitles.get(position));
+
 
         // Set the right options selected
         mMenuAdapter.setViewSelected(position, true);
 
-        // Navigate to the right fragment
 
 
-
-
-                if(position == 4){
+                if(position == 3){
                     goToFragment(new MapsFragment());
                 }else {
-                    startActivity(new Intent(InitialActivity.this,MainActivity.class));
-             }
+
+                    Validar();
+
+
+                }
 
 
         // Close the drawer
         mViewHolder.mDuoDrawerLayout.closeDrawer();
+    }
+
+    private void Validar() {
+        final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(InitialActivity.this);
+        builder.setMessage("Para acessar esses menus voce deve estar logado!\nDeseja continuar?")
+                .setCancelable(false)
+                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, final int id) {
+                        startActivity(new Intent(InitialActivity.this, MainActivity.class));
+                    }
+                })
+                .setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, final int id) {
+                        dialog.cancel();
+                    }
+                }).show();
     }
 
     private class ViewHolder {

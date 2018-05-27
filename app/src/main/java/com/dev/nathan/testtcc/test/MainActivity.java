@@ -1,5 +1,6 @@
 package com.dev.nathan.testtcc.test;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -164,13 +165,10 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
         mMenuAdapter.setViewSelected(position, true);
 
         // Navigate to the right fragment
+
+
+
         switch (position) {
-
-
-
-
-
-
 
             case 0 :{ Toast.makeText(this,"posiçao"+position,Toast.LENGTH_LONG).show();
                 goToFragment(new HomeFragment());

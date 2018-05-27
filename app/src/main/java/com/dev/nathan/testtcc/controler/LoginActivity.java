@@ -120,9 +120,6 @@ public class LoginActivity extends AppCompatActivity {
 
             sendToMain();
 
-        }else{
-            Toast.makeText(this,"Para acesso a mais funções por favor efetuar o Login",Toast.LENGTH_LONG).show();
-
         }
 
 
