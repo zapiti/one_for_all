@@ -92,9 +92,19 @@ public class MapsFragment extends Fragment {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+
+
+    }
+
+
+
+    @Override
     public void onResume() {
         super.onResume();
         mMapView.onResume();
+
     }
 
     @Override
@@ -155,7 +165,7 @@ public class MapsFragment extends Fragment {
     private void CallMaker(final GoogleMap googleMap) {
         Query firstQuery = firebaseFirestore.collection("Posts").orderBy("dhUpload", Query.Direction.DESCENDING);
 
-        firstQuery.addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>() {
+        firstQuery.addSnapshotListener(Objects.requireNonNull(getActivity()), new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
 
@@ -186,10 +196,12 @@ public class MapsFragment extends Fragment {
                                 if(id.danger.equals("Violência no Trabalho")) {
                                     getLocationFromAddress(context, id.address,id,googleMap,R.drawable.ic_danger_trabalho);
                                 }
-                                else{
-                                    getLocationFromAddress(context, id.address,id,googleMap,R.drawable.ic_danger_other);
-                                }
+                                else {
+                                    if (!id.address.isEmpty() && id.address != null) {
+                                        getLocationFromAddress(context, id.address, id, googleMap, R.drawable.ic_danger_other);
+                                    }
 
+                                }
                             }
 
                             //    Log.d("Assado",latLng.toString());

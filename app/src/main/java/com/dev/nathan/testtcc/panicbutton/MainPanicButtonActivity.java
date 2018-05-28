@@ -95,11 +95,11 @@ public class MainPanicButtonActivity extends AppCompatActivity {
 
 
 
-        if (ActivityCompat.checkSelfPermission(Objects.requireNonNull(this), Manifest.permission.ACCESS_NETWORK_STATE)
+       else if (ActivityCompat.checkSelfPermission(Objects.requireNonNull(this), Manifest.permission.ACCESS_NETWORK_STATE)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
                 (this, Manifest.permission.CHANGE_NETWORK_STATE) != PackageManager.PERMISSION_GRANTED) {
 
-            ActivityCompat.requestPermissions(Objects.requireNonNull(this), new String[]{Manifest.permission.ACCESS_NETWORK_STATE}, REQUEST_LOCATION);
+            ActivityCompat.requestPermissions(Objects.requireNonNull(this), new String[]{Manifest.permission.ACCESS_NETWORK_STATE}, 2);
 
         }else {
             locator.requestUpdate();

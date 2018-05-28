@@ -1,10 +1,13 @@
 package com.dev.nathan.testtcc.controler;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -48,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
     private FirebaseFirestore firebaseFirestore;
     private TextView mTitle;
     private TextView mT2;
+    private static final int REQUEST_LOCATION = 1;
     //Criando a view
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,7 +144,32 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
                 break;
             }
             case 2 :{
-                startActivity( new Intent(this, MainPanicButtonActivity.class));
+
+                if (ActivityCompat.checkSelfPermission(Objects.requireNonNull(this), Manifest.permission.SEND_SMS)
+                        != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                        (this, Manifest.permission.SEND_RESPOND_VIA_MESSAGE) != PackageManager.PERMISSION_GRANTED) {
+
+                    ActivityCompat.requestPermissions(Objects.requireNonNull(this), new String[]{Manifest.permission.SEND_SMS}, REQUEST_LOCATION);
+                }
+                else   if (ActivityCompat.checkSelfPermission(Objects.requireNonNull(this), Manifest.permission.ACCESS_FINE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                        (this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+                    ActivityCompat.requestPermissions(Objects.requireNonNull(this), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+
+                }
+
+
+                else if (ActivityCompat.checkSelfPermission(Objects.requireNonNull(this), Manifest.permission.ACCESS_NETWORK_STATE)
+                        != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                        (this, Manifest.permission.CHANGE_NETWORK_STATE) != PackageManager.PERMISSION_GRANTED) {
+
+                    ActivityCompat.requestPermissions(Objects.requireNonNull(this), new String[]{Manifest.permission.ACCESS_NETWORK_STATE}, REQUEST_LOCATION);
+
+                }else {
+
+                    startActivity(new Intent(this, MainPanicButtonActivity.class));
+                }
                 break;
             }
             case 3 :{
