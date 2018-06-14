@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.dev.nathan.testtcc.R;
 import com.dev.nathan.testtcc.adapter.NetworkWebViewAdapter;
@@ -52,7 +54,7 @@ public class WebViewFragment extends Fragment {
     private DocumentSnapshot lastVisible;
     private Boolean isFirstPageFirstLoad = true;
 
-    Button myButton;
+    ImageView myButton;
     View myView;
     boolean isUp;
 
@@ -72,7 +74,7 @@ public class WebViewFragment extends Fragment {
 
         // initialize as invisible (could also do in xml)
         myView.setVisibility(View.GONE);
-        myButton.setText("Slide up");
+
         isUp = false;
 
 
@@ -81,7 +83,7 @@ public class WebViewFragment extends Fragment {
             public void onClick(View v) {
                 if (isUp) {
                     //   slideDown(myView);
-                    myButton.setText("Slide up");
+
                     myView.animate()
                             .alpha(0.0f)
                             .setListener(new AnimatorListenerAdapter() {
@@ -104,7 +106,7 @@ public class WebViewFragment extends Fragment {
                                     myView.setAlpha(0.0f);
                                 }
                             });
-                    myButton.setText("Slide down");
+
                 }
                 isUp = !isUp;
             }

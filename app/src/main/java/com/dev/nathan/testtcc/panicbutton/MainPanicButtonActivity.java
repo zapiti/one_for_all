@@ -172,7 +172,7 @@ public class MainPanicButtonActivity extends AppCompatActivity {
         try {
             new PositionInfoDialog(locator.getLocation(), MainPanicButtonActivity.this).show();
         } catch (Locator.NoPositionProvidersException e) {
-            //locator.showSettingsAlert();
+            locator.showSettingsAlert();
         }
     }
 
@@ -232,9 +232,10 @@ public class MainPanicButtonActivity extends AppCompatActivity {
                         smsMan.sendTextMessage(p.getNumber(), null, messageText, null, null);
                     }
 
-                    Toast.makeText(getApplicationContext(), "Messagem Enviada", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Messagem Enviada", Toast.LENGTH_SHORT).show();
                 } catch (Locator.NoPositionProvidersException e) {
-                    locator.showSettingsAlert();
+                   // locator.showSettingsAlert();
+                    Toast.makeText(getBaseContext(),"Não foi possível conectar ao gps !Tente novamente",Toast.LENGTH_SHORT).show();
                 }
             }
         });

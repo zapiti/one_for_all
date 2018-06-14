@@ -3,6 +3,8 @@ package com.dev.nathan.testtcc.fragment;
 import android.Manifest;
 
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -16,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.dev.nathan.testtcc.R;
 
@@ -46,6 +49,9 @@ import java.util.Objects;
 
 public class MapsFragment extends Fragment {
 
+    ImageView myButton;
+    View myView;
+    boolean isUp;
     MapView mMapView;
     private GoogleMap googleMap;
     private FirebaseFirestore firebaseFirestore;
@@ -53,6 +59,51 @@ public class MapsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.location_fragment, container, false);
+
+
+
+        myView = rootView.findViewById(R.id.infoLegendWeb);
+        myButton = rootView.findViewById(R.id.infoButtonLegendy);
+
+        // initialize as invisible (could also do in xml)
+        myView.setVisibility(View.GONE);
+
+        isUp = false;
+
+
+        myButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isUp) {
+                    //   slideDown(myView);
+
+                    myView.animate()
+                            .alpha(0.0f)
+                            .setListener(new AnimatorListenerAdapter() {
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+                                    super.onAnimationEnd(animation);
+                                    myView.setVisibility(View.GONE);
+                                }
+                            });
+
+                } else {
+                    //   slideUp(myView);
+                    myView.animate()
+                            .translationY(0).alpha(1.0f)
+                            .setListener(new AnimatorListenerAdapter() {
+                                @Override
+                                public void onAnimationStart(Animator animation) {
+                                    super.onAnimationStart(animation);
+                                    myView.setVisibility(View.VISIBLE);
+                                    myView.setAlpha(0.0f);
+                                }
+                            });
+
+                }
+                isUp = !isUp;
+            }
+        });
 
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
